@@ -184,7 +184,6 @@ services:
       KAFKA_REST_CLIENT_SASL_JAAS_CONFIG: $SASL_JAAS_CONFIG
       KAFKA_REST_CLIENT_SASL_MECHANISM: "PLAIN"
   topic-browser:
-          #image: landoop/kafka-topics-ui
     image: axv0419/kafka-topic-ui
     depends_on:
       - rest-proxy
@@ -196,7 +195,7 @@ services:
       KAFKA_REST_PROXY_URL: "http://rest-proxy:8082"
       PROXY: "true"
   py-notebook:
-    image: eu.gcr.io/p8-integrations-eu-dev-2/kafka-jupi
+    image: kafka-py/notebook
     container_name: kafka-py
     ports:
       - 8888:8888
