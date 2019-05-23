@@ -197,7 +197,7 @@ services:
   py-notebook:
     image: kafka-py/notebook
     container_name: kafka-py
-    user: 1005:1006
+    # user: 1005:1006
     ports:
       - 8888:8888
     entrypoint:
@@ -205,7 +205,7 @@ services:
       - --NotebookApp.password='sha1:0b693d4b0248:a06da93936310eee98e56a09ac40cd05f496c411'
       - --NotebookApp.allow_origin='*'
     volumes:
-      - /home/axv0419/workspace/kafka-notebook/jovyan:/home/jovyan
+      - ./kafka-notebook/jovyan:/home/jovyan
 
   kafka-rest-service:
     image: kafka/rest-service
