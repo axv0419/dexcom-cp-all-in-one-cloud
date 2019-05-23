@@ -1,3 +1,6 @@
 [submodule "kafka-rest-service"]
 	path = kafka-rest-service
 	url = https://github.com/axv0419/kafka-rest-service.git
+[submodule "kafka-notebook"]
+	path = kafka-notebook
+	url = git@github.com:axv0419/kafka-notebook.git
