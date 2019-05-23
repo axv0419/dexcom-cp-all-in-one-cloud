@@ -196,7 +196,7 @@ services:
   #     PROXY: "true"
   py-notebook:
     image: kafka-py/notebook
-    build: ./kafka-notebook
+    build: ./kafka-notebook/image
     container_name: kafka-py
     # user: 1005:1006
     ports:
