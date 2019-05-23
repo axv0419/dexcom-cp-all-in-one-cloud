@@ -215,8 +215,8 @@ services:
     ports:
       - 8080:8080
     volumes:
-      - /home/axv0419/workspace/kafka-rest-service/appcfg:/appcfg
-      - /home/axv0419/workspace/kafka-rest-service/app:/app
+      - ./kafka-rest-service/appcfg:/appcfg
+      - ./kafka-rest-service/app:/app
     environment:
       CCLOUD_BROKER_URL: $CCLOUD_BROKER_URL
       CCLOUD_API_KEY: $CCLOUD_API_KEY
