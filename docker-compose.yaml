@@ -183,17 +183,17 @@ services:
       KAFKA_REST_CLIENT_SECURITY_PROTOCOL: "SASL_SSL"
       KAFKA_REST_CLIENT_SASL_JAAS_CONFIG: $SASL_JAAS_CONFIG
       KAFKA_REST_CLIENT_SASL_MECHANISM: "PLAIN"
-  # topic-browser:
-  #   image: axv0419/kafka-topic-ui
-  #   depends_on:
-  #     - rest-proxy
-  #   ports:
-  #     - 8000:8000
-  #   hostname: topic-browser
-  #   container_name: topic-browser
-  #   environment:
-  #     KAFKA_REST_PROXY_URL: "http://rest-proxy:8082"
-  #     PROXY: "true"
+  topic-browser:
+    image: landoop/kafka-topics-ui
+    depends_on:
+      - rest-proxy
+    ports:
+      - 8000:8000
+    hostname: topic-browser
+    container_name: topic-browser
+    environment:
+      KAFKA_REST_PROXY_URL: "http://rest-proxy:8082"
+      PROXY: "true"
   py-notebook:
     image: kafka-py/notebook
     build: ./kafka-notebook/image
