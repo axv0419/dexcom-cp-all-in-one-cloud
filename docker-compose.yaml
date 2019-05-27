@@ -228,6 +228,7 @@ services:
       CCLOUD_BROKER_URL: $CCLOUD_BROKER_URL
       CCLOUD_API_KEY: $CCLOUD_API_KEY
       CCLOUD_API_SECRET: $CCLOUD_API_SECRET
-      KAFKA_REST_PROXY_URL: "http://rest-proxy:8082"      
+      KAFKA_REST_PROXY_URL: "http://rest-proxy:8082"
+
 volumes:
     mi2: {}
