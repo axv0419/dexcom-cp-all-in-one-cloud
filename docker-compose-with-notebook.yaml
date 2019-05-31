@@ -197,19 +197,19 @@ services:
       RECORD_POLL_TIMEOUT: 10000
       MAX_BYTES: 1000000
       PROXY: "true"
-  # py-notebook:
-  #   image: kafka-py/notebook
-  #   build: ./kafka-notebook/image
-  #   container_name: kafka-py
-  #   # user: 1005:1006
-  #   ports:
-  #     - 8888:8888
-  #   entrypoint:
-  #     - start-notebook.sh
-  #     - --NotebookApp.password='sha1:0b693d4b0248:a06da93936310eee98e56a09ac40cd05f496c411'
-  #     - --NotebookApp.allow_origin='*'
-  #   volumes:
-  #     - ./kafka-notebook/jovyan:/home/jovyan
+  py-notebook:
+    image: kafka-py/notebook
+    build: ./kafka-notebook/image
+    container_name: kafka-py
+    # user: 1005:1006
+    ports:
+      - 8888:8888
+    entrypoint:
+      - start-notebook.sh
+      - --NotebookApp.password='sha1:0b693d4b0248:a06da93936310eee98e56a09ac40cd05f496c411'
+      - --NotebookApp.allow_origin='*'
+    volumes:
+      - ./kafka-notebook/jovyan:/home/jovyan
 
   kafka-rest-service:
     image: kafka/rest-service
