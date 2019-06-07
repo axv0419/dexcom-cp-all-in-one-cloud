@@ -109,8 +109,6 @@ services:
       - schema-registry
     ports:
       - 8083:8083
-    volumes:
-      - mi2:/usr/share/java/monitoring-interceptors/
     environment:
       CONNECT_BOOTSTRAP_SERVERS: $BOOTSTRAP_SERVERS
       CONNECT_REST_PORT: 8083
@@ -157,6 +155,7 @@ services:
       CONNECT_CONSUMER_CONFLUENT_MONITORING_INTERCEPTOR_SASL_JAAS_CONFIG: $SASL_JAAS_CONFIG
       CONNECT_CONSUMER_CONFLUENT_MONITORING_INTERCEPTOR_SASL_MECHANISM: PLAIN
     volumes:
+      - mi2:/usr/share/java/monitoring-interceptors/
       - ./kafka-connect/plugins/kafka-connect-http-request-response:/usr/share/java/kafka-connect-http-request-response
       - ./kafka-connect/plugins/kafka-connect-salesforce-platform-events:/usr/share/java/kafka-connect-salesforce-platform-events
       - ./kafka-connect/plugins/kafka-connect-salesforce-rest-api:/usr/share/java/kafka-connect-salesforce-rest-api
