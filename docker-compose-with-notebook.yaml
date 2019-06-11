@@ -24,12 +24,12 @@ services:
     hostname: ksql-server
     container_name: ksql-server
     ports:
-      - 8089:8089
+      - 8088:8088
     environment:
       KSQL_HOST_NAME: ksql-server
       KSQL_CONFIG_DIR: "/etc/ksql"
       KSQL_LOG4J_OPTS: "-Dlog4j.configuration=file:/etc/ksql/log4j-rolling.properties"
-      KSQL_LISTENERS: "http://0.0.0.0:8089"
+      KSQL_LISTENERS: "http://0.0.0.0:8088"
       KSQL_AUTO_OFFSET_RESET: "earliest"
       KSQL_COMMIT_INTERVAL_MS: 0
       KSQL_CACHE_MAX_BYTES_BUFFERING: 0
@@ -73,8 +73,8 @@ services:
       - 9022:9022
     environment:
       CONTROL_CENTER_BOOTSTRAP_SERVERS: $BOOTSTRAP_SERVERS
-      CONTROL_CENTER_KSQL_URL: "http://ksql-server:8089"
-      CONTROL_CENTER_KSQL_ADVERTISED_URL: "http://${MY_PUBLIC_IP}:8089"
+      CONTROL_CENTER_KSQL_URL: "http://ksql-server:8088"
+      CONTROL_CENTER_KSQL_ADVERTISED_URL: "http://${MY_PUBLIC_IP}:8088"
       CONTROL_CENTER_SCHEMA_REGISTRY_URL: "http://schema-registry:8085"
       CONTROL_CENTER_CONNECT_CLUSTER: "http://connect:8083"
       CONTROL_CENTER_STREAMS_SECURITY_PROTOCOL: SASL_SSL
