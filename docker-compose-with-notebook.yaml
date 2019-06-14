@@ -91,6 +91,12 @@ services:
       CONTROL_CENTER_MONITORING_INTERCEPTOR_TOPIC_PARTITIONS: 1
       # Workaround for MMA-3564
       CONTROL_CENTER_METRICS_TOPIC_MAX_MESSAGE_BYTES: 8388608
+      # Basic Auth
+      CONTROL_CENTER_AUTH_RESTRICTED_ROLES: Restricted
+      CONTROL_CENTER_REST_AUTHENTICATION_METHOD: BASIC
+      CONTROL_CENTER_REST_AUTHENTICATION_REALM: c3
+      CONTROL_CENTER_REST_AUTHENTICATION_ROLES: Administrators,Restricted
+      CONTROL_CENTER_OPTS: "confluent/propertyfile.jaas"
       # SSL
       # CONTROL_CENTER_REST_LISTENERS: https://0.0.0.0:9022
       # CONTROL_CENTER_REST_SSL_KEYSTORE_LOCATION: /var/secret/CERTS/identity.jks
@@ -100,7 +106,7 @@ services:
       # CONTROL_CENTER_REST_SSL_TRUSTSTORE_PASSWORD: $KEYSTORE_PASS
       PORT: 9021
     volumes:
-      - ./control-center/CERTS:/var/secret/CERTS
+      - ./confluent:/confluent
   connect:
     image: confluentinc/cp-enterprise-replicator:5.2.1
     hostname: connect
