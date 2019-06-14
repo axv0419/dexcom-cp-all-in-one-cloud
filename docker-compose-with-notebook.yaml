@@ -96,7 +96,7 @@ services:
       CONTROL_CENTER_REST_AUTHENTICATION_METHOD: BASIC
       CONTROL_CENTER_REST_AUTHENTICATION_REALM: c3
       CONTROL_CENTER_REST_AUTHENTICATION_ROLES: Administrators,Restricted
-      CONTROL_CENTER_OPTS: "/tmp/confluent/propertyfile.jaas"
+      CONTROL_CENTER_OPTS: "-Djava.security.auth.login.config=/tmp/confluent/propertyfile.jaas -Djava.io.tmpdir=/tmp"
       # SSL
       # CONTROL_CENTER_REST_LISTENERS: https://0.0.0.0:9022
       # CONTROL_CENTER_REST_SSL_KEYSTORE_LOCATION: /var/secret/CERTS/identity.jks
@@ -106,7 +106,7 @@ services:
       # CONTROL_CENTER_REST_SSL_TRUSTSTORE_PASSWORD: $KEYSTORE_PASS
       PORT: 9021
     volumes:
-      - ./control-center/tmp:/tmp  
+      - ./control-center/tmp/confluent:/tmp/confluent  
   connect:
     image: confluentinc/cp-enterprise-replicator:5.2.1
     hostname: connect
