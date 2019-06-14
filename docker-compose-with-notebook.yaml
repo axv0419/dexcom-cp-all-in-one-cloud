@@ -92,11 +92,11 @@ services:
       # Workaround for MMA-3564
       CONTROL_CENTER_METRICS_TOPIC_MAX_MESSAGE_BYTES: 8388608
       # Basic Auth
-      CONTROL_CENTER_AUTH_RESTRICTED_ROLES: Restricted
-      CONTROL_CENTER_REST_AUTHENTICATION_METHOD: BASIC
-      CONTROL_CENTER_REST_AUTHENTICATION_REALM: c3
-      CONTROL_CENTER_REST_AUTHENTICATION_ROLES: Administrators,Restricted
-      CONTROL_CENTER_OPTS: "-Djava.security.auth.login.config=/tmp/confluent/propertyfile.jaas -Djava.io.tmpdir=/tmp"
+      # CONTROL_CENTER_AUTH_RESTRICTED_ROLES: Restricted
+      # CONTROL_CENTER_REST_AUTHENTICATION_METHOD: BASIC
+      # CONTROL_CENTER_REST_AUTHENTICATION_REALM: c3
+      # CONTROL_CENTER_REST_AUTHENTICATION_ROLES: Administrators,Restricted
+      # CONTROL_CENTER_OPTS: "-Djava.security.auth.login.config=/tmp/confluent/propertyfile.jaas -Djava.io.tmpdir=/tmp"
       # SSL
       # CONTROL_CENTER_REST_LISTENERS: https://0.0.0.0:9022
       # CONTROL_CENTER_REST_SSL_KEYSTORE_LOCATION: /var/secret/CERTS/identity.jks
